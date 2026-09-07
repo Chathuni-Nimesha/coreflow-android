@@ -7,17 +7,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <LinearLayout
         android:id="@+id/errorContainer"
@@ -25,25 +24,28 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            style="@style/TextStyleHabit"
+            style="@style/TextAppearance.Coreflow.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/error"
-            />
-        <Button
+            android:text="@string/error" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/againButton"
+            style="@style/Widget.Coreflow.Button.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="@string/again"/>
-
+            android:layout_marginTop="12dp"
+            android:minHeight="48dp"
+            android:text="@string/again" />
     </LinearLayout>
 
     <LinearLayout
@@ -52,17 +54,29 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/emptyTitle"
+            style="@style/TextAppearance.Coreflow.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextStyleHabit"
             android:gravity="center"
-            android:text="@string/empty_list"
-            />
+            android:text="@string/empty_list" />
+
+        <TextView
+            android:id="@+id/emptyBody"
+            style="@style/TextAppearance.Coreflow.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/empty_habits_body"
+            android:textColor="@color/coreflow_on_surface_variant" />
     </LinearLayout>
 </merge>

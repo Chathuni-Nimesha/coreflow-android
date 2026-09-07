@@ -7,13 +7,13 @@
     android:paddingEnd="22dp"
     android:paddingTop="22dp"
     android:paddingBottom="22dp"
-    android:hint="Enter Day Name"> <!-- Set hint here -->
+    android:hint="@string/enter_name">
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/nameHabitEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Day"
+        android:hint="@string/add_rename_hint"
         android:imeOptions="actionDone"
         android:inputType="text"
         android:paddingStart="0dp"

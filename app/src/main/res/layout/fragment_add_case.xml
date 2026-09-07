@@ -1,146 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#322C2B">
+    android:background="@color/coreflow_background"
+    android:fillViewport="true">
 
-    <Button
-        android:id="@+id/saveButton"
-        style="@style/ToggleButton"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/toggle"
-        android:text="@string/save"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cancelButton" />
+        android:padding="20dp">
 
-    <Button
-        android:id="@+id/cancelButton"
-        style="@style/ToggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/toggle"
-        android:text="@string/cancel"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/saveButton"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/comTV"
+            style="@style/TextAppearance.Coreflow.Headline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/log_note_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/commentLayout"
+            style="@style/Widget.Coreflow.TextInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/log_note_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/comTV">
 
-    <TextView
-        android:id="@+id/comTV"
-        style="@style/TextStyleHabit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:text="Workout Time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/commentET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences|textMultiLine"
+                android:minHeight="48dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/commentET"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:hint="Add your works"
-        android:inputType="text"
-        android:shadowColor="@color/white"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/comTV"
-        app:layout_constraintTop_toBottomOf="@+id/comTV" />
+        <TextView
+            android:id="@+id/timeTV"
+            style="@style/TextAppearance.Coreflow.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/commentLayout" />
 
-    <TextView
-        android:id="@+id/dateTV"
-        style="@style/TextStyleHabit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/commentET"
-        app:layout_constraintTop_toBottomOf="@+id/timeTV" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/currentTime"
+            style="@style/Widget.Coreflow.Button.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/time"
+            app:layout_constraintBottom_toBottomOf="@id/timeTV"
+            app:layout_constraintStart_toEndOf="@id/timeTV"
+            app:layout_constraintTop_toTopOf="@id/timeTV"
+            android:layout_marginStart="12dp" />
 
-    <TextView
-        android:id="@+id/timeTV"
-        style="@style/TextStyleHabit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/commentET"
-        app:layout_constraintTop_toBottomOf="@+id/commentET" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/changeTimeButton"
+            style="@style/Widget.Coreflow.Button.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/change_time"
+            app:layout_constraintBottom_toBottomOf="@id/timeTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/timeTV" />
 
+        <TextView
+            android:id="@+id/dateTV"
+            style="@style/TextAppearance.Coreflow.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/timeTV" />
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/currentTime1"-->
-    <!--        style="@style/TextStyleHabit"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="@string/time"-->
-    <!--        android:textSize="24sp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="@+id/timeTV"-->
-    <!--        app:layout_constraintEnd_toStartOf="@+id/changeTimeButton"-->
-    <!--        app:layout_constraintStart_toEndOf="@+id/timeTV"-->
-    <!--        app:layout_constraintTop_toTopOf="@+id/timeTV" />-->
+        <CalendarView
+            android:id="@+id/calendarViem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:dateTextAppearance="@style/CalenderViewDateCustomText"
+            android:theme="@style/CalenderViewCustom"
+            android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateTV" />
 
-    <Button
-        android:id="@+id/currentTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/time"
-        android:backgroundTint="#F68989"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.356"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelButton"
+            style="@style/Widget.Coreflow.Button.Secondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:minHeight="48dp"
+            android:text="@string/cancel"
+            app:layout_constraintEnd_toStartOf="@id/saveButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calendarViem" />
 
-    <CalendarView
-        android:id="@+id/calendarViem"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
-        android:dateTextAppearance="@style/CalenderViewDateCustomText"
-        android:theme="@style/CalenderViewCustom"
-        android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
-        app:layout_constraintBottom_toTopOf="@+id/cancelButton"
-        app:layout_constraintEnd_toEndOf="@+id/commentET"
-        app:layout_constraintStart_toStartOf="@+id/commentET"
-        app:layout_constraintTop_toBottomOf="@+id/dateTV"
-        app:layout_constraintVertical_bias="0.060000002" />
-
-    <Button
-        android:id="@+id/changeTimeButton"
-        style="@style/ToggleButton"
-        android:layout_width="148dp"
-        android:layout_height="47dp"
-        android:backgroundTint="@color/toggle"
-        android:text="@string/change_time"
-        app:layout_constraintBottom_toBottomOf="@+id/timeTV"
-        app:layout_constraintEnd_toEndOf="@+id/commentET"
-        app:layout_constraintTop_toTopOf="@+id/timeTV" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveButton"
+            style="@style/Widget.Coreflow.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:minHeight="48dp"
+            android:text="@string/set_reminder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cancelButton"
+            app:layout_constraintTop_toTopOf="@id/cancelButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

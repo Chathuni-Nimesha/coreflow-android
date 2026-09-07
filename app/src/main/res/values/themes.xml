@@ -1,9 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.HabitTracker" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.Coreflow" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/coreflow_primary</item>
+        <item name="colorPrimaryDark">@color/coreflow_primary_dark</item>
+        <item name="colorSecondary">@color/coreflow_secondary</item>
+        <item name="colorOnPrimary">@color/coreflow_on_primary</item>
+        <item name="colorSurface">@color/coreflow_surface</item>
+        <item name="colorOnSurface">@color/coreflow_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/coreflow_on_surface_variant</item>
+        <item name="colorError">@color/coreflow_error</item>
+        <item name="android:colorBackground">@color/coreflow_background</item>
+        <item name="android:statusBarColor">@color/coreflow_secondary</item>
+        <item name="android:navigationBarColor">@color/coreflow_surface</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="materialButtonStyle">@style/Widget.Coreflow.Button</item>
     </style>
 
-    <style name="Theme.HabitTracker" parent="Base.Theme.HabitTracker" />
+    <style name="Theme.Coreflow" parent="Base.Theme.Coreflow" />
 </resources>

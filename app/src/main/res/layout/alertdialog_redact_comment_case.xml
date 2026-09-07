@@ -13,7 +13,7 @@
         android:id="@+id/commentCaseEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="text"
+        android:hint="@string/note_hint"
         android:imeOptions="actionDone"
         android:inputType="text"
         android:paddingStart="0dp"

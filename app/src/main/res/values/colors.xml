@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="cards">#FB6D48</color>
-    <color name="background">#2F3645</color>
-    <color name="white">#ffffff</color>
-    <color name="gray">#2F3645</color>
-    <color name="black">#697565</color>
-    <color name="toggle">#F68989</color>
+    <color name="coreflow_primary">#E85D4C</color>
+    <color name="coreflow_primary_dark">#C44A3B</color>
+    <color name="coreflow_secondary">#2F3645</color>
+    <color name="coreflow_background">#F5F6F8</color>
+    <color name="coreflow_surface">#FFFFFF</color>
+    <color name="coreflow_on_primary">#FFFFFF</color>
+    <color name="coreflow_on_surface">#1C1F26</color>
+    <color name="coreflow_on_surface_variant">#5C6370</color>
+    <color name="coreflow_error">#B3261E</color>
+    <color name="coreflow_success">#2E7D32</color>
+    <color name="coreflow_outline">#DADDE3</color>
+    <color name="coreflow_chip">#FFF1EE</color>
 
-<!--    <color name="background_notnight">#FFFFFF</color>-->
-<!--    <color name="cards_notnight">#7875BF</color>-->
-<!--    <color name="buttons_notnight">#423D99</color>-->
+    <!-- Legacy aliases used by older layouts during transition -->
+    <color name="cards">@color/coreflow_primary</color>
+    <color name="background">@color/coreflow_secondary</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">@color/coreflow_secondary</color>
+    <color name="black">@color/coreflow_on_surface_variant</color>
+    <color name="toggle">#F68989</color>
 </resources>
